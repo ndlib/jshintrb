@@ -25,7 +25,9 @@ jobs:
       - name: Install proper bundler gem
         run: gem install bundler -v 1.17.3
       - name: Install Ruby gems
-        run: bundle install
+        run: |
+          gem install therubyracer
+          bundle install
       - name: Run rake spec tasks
         env:
           EXECJS_RUNTIME: RubyRacer
